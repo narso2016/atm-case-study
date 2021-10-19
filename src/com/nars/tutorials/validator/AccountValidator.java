@@ -18,6 +18,14 @@ public class AccountValidator {
     }
 
 
+    public static boolean checkValidAccount(String acc, Map<Integer, Account> datasource) {
+        for (Map.Entry<Integer, Account> entry : datasource.entrySet()) {
+            int key = entry.getKey();
+            Account account = entry.getValue();
+            if (acc.equals(account.getAccountNumber())) return true;
+        }
+        return false;
+    }
     public static boolean checkValidAccAndPIN(String acc, String pin, Map<Integer, Account> datasource) {
         for (Map.Entry<Integer, Account> entry : datasource.entrySet()) {
             int key = entry.getKey();

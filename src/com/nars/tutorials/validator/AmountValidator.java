@@ -7,6 +7,9 @@ public class AmountValidator {
     public static boolean isMaxAmount(BigDecimal amount, BigDecimal threshold){
         return (amount.compareTo(threshold) > 0);
     }
+    public static boolean isMinAmount(BigDecimal amount, BigDecimal threshold){
+        return (amount.compareTo(threshold) < 0);
+    }
 
     public static boolean isMultipleBy(int amount, int threshold){
         return (amount % threshold == 0);
